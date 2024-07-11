@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+# Weather Dashboard Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [APIs](#apis)
+- [Firebase Setup](#firebase-setup)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Available Scripts
+## Introduction
+The Weather Dashboard Application is a web-based platform that allows users to search for current weather conditions and a 5-day weather forecast for any city. Users can also save their favorite cities and view weather updates for these cities.
 
-In the project directory, you can run:
+## Features
+- Search for current weather conditions by city.
+- View a 5-day weather forecast with detailed weather information.
+- User authentication (sign up, log in, log out).
+- Add and remove favorite cities.
+- Responsive design for mobile and desktop views.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
+- Node.js
+- npm (Node Package Manager)
+- Firebase account (for authentication and Firestore database)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Steps
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/weather-dashboard.git
+    cd weather-dashboard
+    ```
 
-### `npm test`
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Set up Firebase:
+    - Go to the [Firebase Console](https://console.firebase.google.com/).
+    - Create a new project.
+    - Add a web app to your project and copy the Firebase configuration.
+    - Enable Authentication (Email/Password and Google Sign-In).
+    - Set up Firestore Database with appropriate rules.
 
-### `npm run build`
+4. Create a `.env` file in the root directory and add your Firebase configuration:
+    ```
+    REACT_APP_FIREBASE_API_KEY=your_api_key
+    REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
+    REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+    REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+    REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+    REACT_APP_FIREBASE_APP_ID=your_app_id
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. Start the development server:
+    ```bash
+    npm start
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
+- Visit `http://localhost:3000` in your browser.
+- Register a new account or log in with an existing account.
+- Use the search bar to find the current weather and 5-day forecast for any city.
+- Add cities to your favorites list for quick access.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
+- React.js
+- Material-UI
+- Firebase (Authentication and Firestore)
+- OpenWeatherMap API
 
-### `npm run eject`
+## APIs
+This application uses the [OpenWeatherMap API](https://openweathermap.org/api) to fetch weather data. You need to sign up on OpenWeatherMap and get an API key to use the weather services.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Firebase Setup
+1. **Authentication**: Enable Email/Password and Google Sign-In methods in the Firebase console.
+2. **Firestore Database**: Create a collection called `favorites` to store users' favorite cities. Ensure the Firestore rules allow read and write access to authenticated users.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Project Structure
+weather-dashboard/
+├── public/
+│ ├── index.html
+│ ├── cloud.jpg
+│ └── ...
+├── src/
+│ ├── api/
+│ │ └── weatherApi.js
+│ ├── components/
+│ │ ├── SearchBar.js
+│ │ ├── CurrentWeather.js
+│ │ ├── Favorites.js
+│ │ └── ...
+│ ├── contexts/
+│ │ └── authContext.js
+│ ├── firebase/
+│ │ ├── auth.js
+│ │ ├── config.js
+│ │ └── firestore.js
+│ ├── App.js
+│ ├── index.js
+│ └── ...
+├── .env
+├── package.json
+├── README.md
+└── ...
