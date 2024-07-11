@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+//App.js
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import WeatherDashboard from "./components/WeatherDashboard";
+import Login from "./auth/login";
+import Register from "./auth/register";
+import { Box } from "@mui/material";
+import { AuthProvider } from "./contexts/authContext";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <AuthProvider>
+      <Router>
+        <Box
+          sx={{
+            backgroundImage: "url('/bg.jpg')",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            minHeight: "100vh",
+            display: "flex",
+            flexDirection: "column",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Routes>
+            <Route path="/" element={<WeatherDashboard />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </Box>
+      </Router>
+    </AuthProvider>
   );
-}
+};
 
 export default App;
