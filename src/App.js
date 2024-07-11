@@ -13,7 +13,7 @@ const App = () => {
       <Router>
         <Box
           sx={{
-            backgroundImage: "url('/bg.jpg')",
+            backgroundImage: "url('%PUBLIC_URL%/bg.jpg')",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
