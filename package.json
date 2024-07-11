@@ -1,5 +1,5 @@
 {
-  "homepage": "https://ShobRaj24.github.io/weather-dashboard",
+  "homepage": "https://ShobRaj24.github.io/weather",
   "name": "weather-dashboard",
   "version": "0.1.0",
   "private": true,
@@ -27,7 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "test": "react-scripts build",
+    "test": "react-scripts tests",
     "build": "react-scripts build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
