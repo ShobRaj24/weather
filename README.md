@@ -85,27 +85,28 @@ This application uses the [OpenWeatherMap API](https://openweathermap.org/api) t
 ## Project Structure
 weather-dashboard/
 ├── public/
-│ ├── index.html
-│ ├── cloud.jpg
-│ └── ...
+│   ├── index.html        # Main HTML file
+│   ├── cloud.jpg         # Background image
+│   └── ...               # Other public assets
 ├── src/
-│ ├── api/
-│ │ └── weatherApi.js
-│ ├── components/
-│ │ ├── SearchBar.js
-│ │ ├── CurrentWeather.js
-│ │ ├── Favorites.js
-│ │ └── ...
-│ ├── contexts/
-│ │ └── authContext.js
-│ ├── firebase/
-│ │ ├── auth.js
-│ │ ├── config.js
-│ │ └── firestore.js
-│ ├── App.js
-│ ├── index.js
-│ └── ...
-├── .env
-├── package.json
-├── README.md
-└── ...
+│   ├── api/              # API utility functions
+│   │   └── weatherApi.js # Weather API integration
+│   ├── components/       # React components
+│   │   ├── SearchBar.js        # Component for city search
+│   │   ├── CurrentWeather.js   # Component to display current weather
+│   │   ├── Favorites.js        # Component for managing favorite cities
+│   │   └── ...                 # Other components
+│   ├── contexts/         # React context providers
+│   │   └── authContext.js      # Authentication context
+│   ├── firebase/         # Firebase configuration and utilities
+│   │   ├── auth.js             # Authentication functions
+│   │   ├── config.js           # Firebase configuration setup
+│   │   └── firestore.js        # Firestore database functions
+│   ├── App.js            # Main application component
+│   ├── index.js          # Entry point of the application
+│   └── ...               # Other application files
+├── .env                  # Environment variables configuration
+├── package.json          # Node.js package configuration
+├── README.md             # Project documentation
+└── ...                   # Other project files and folders
+
