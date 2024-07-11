@@ -83,7 +83,7 @@ This application uses the [OpenWeatherMap API](https://openweathermap.org/api) t
 2. **Firestore Database**: Create a collection called `favorites` to store users' favorite cities. Ensure the Firestore rules allow read and write access to authenticated users.
 
 ## Project Structure
-weather-dashboard/
+''' weather-dashboard/
 ├── public/
 │   ├── index.html        # Main HTML file
 │   ├── cloud.jpg         # Background image
@@ -109,4 +109,4 @@ weather-dashboard/
 ├── package.json          # Node.js package configuration
 ├── README.md             # Project documentation
 └── ...                   # Other project files and folders
-
+'''
