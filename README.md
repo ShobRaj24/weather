@@ -33,7 +33,7 @@ The Weather Dashboard Application is a web-based platform that allows users to s
 1. Clone the repository:
     ```bash
     git clone https://github.com/ShobRaj24/weather.git
-    cd 
+    cd weather
     ```
 
 2. Install dependencies:
